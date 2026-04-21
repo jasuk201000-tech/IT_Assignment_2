@@ -7,12 +7,14 @@ namespace IT_Assignment_2.Models
 {
     public enum UserRole
     {
+        // enumerating roles, to efficently create role-based access control in the application
         Cashier = 1,
         Manager = 2,
         Admin = 3
     }
     public class Staff
     {
+        // getting and setting all properties for staff
        public int StaffId { get; set; } 
         public string FirstName { get; set;} = string.Empty;
         public string LastName { get; set;} = string.Empty;
