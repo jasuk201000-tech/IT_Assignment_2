@@ -14,6 +14,5 @@ namespace IT_Assignment_2.Data
         public static string ConnectionString =>
        $"Server={Server};Database={Database};User ID={User};Password={Password};Encrypt=True;TrustServerCertificate=False;";
 
-        public static 
-    }
+    } 
 }
