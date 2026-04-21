@@ -11,12 +11,14 @@ namespace IT_Assignment_2.Models
         // implement an ID, first name and last name, email, loyalty points balance, and computed properties for full name and loyalty status
 
         public int CustomerId { get; set; }
-        public string FirstName { get; set; } = null!;
-        public string LastName { get; set; } = null!; 
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public int LoyaltyPoints { get; set; } = 0;
 
         public string CustomerName => $"{FirstName} {LastName}";
+
+        public bool IsLoyalCustomer => LoyaltyPoints >= 100;
 
         public string LoyaltyStatus
         {
