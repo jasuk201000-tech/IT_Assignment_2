@@ -6,7 +6,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace IT_Assignment_2.Models
 {
-    internal class Customer
+    public class Customer
     {
         // implement an ID, first name and last name, email, loyalty points balance, and computed properties for full name and loyalty status
 

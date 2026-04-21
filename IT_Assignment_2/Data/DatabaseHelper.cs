@@ -6,6 +6,7 @@ namespace IT_Assignment_2.Data
 {
     internal class DatabaseHelper
     {
+        // implement database connection and connection string management.
         public const string Server = @"amaneposserversoutheast.database.windows.net";
         public const string Database = "amaneposdb";
         public const string User = "sqladmin";
