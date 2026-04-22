@@ -1,19 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Data.SqlClient;
 
-namespace IT_Assignment_2.Data
+namespace AmaneRetailPOS.Data;
+
+public static class DatabaseHelper
 {
-    internal class DatabaseHelper
+    // sql connection details
+    private const string Server = @"amaneposserversoutheast.database.windows.net";
+    private const string Database = "amaneposdb";
+    private const string User = "sqladmin";
+    private const string Password = "Tribune2020!";
+    
+
+    public static string ConnectionString =>
+        $"Server={Server};Database={Database};User ID={User};Password={Password};Encrypt=True;TrustServerCertificate=False;";
+
+    // connection method
+    public static SqlConnection GetConnection()
     {
-        // implement database connection and connection string management.
-        public const string Server = @"amaneposserversoutheast.database.windows.net";
-        public const string Database = "amaneposdb";
-        public const string User = "sqladmin";
-        public const string Password = "Tribune2020!";
-
-        public static string ConnectionString =>
-       $"Server={Server};Database={Database};User ID={User};Password={Password};Encrypt=True;TrustServerCertificate=False;";
-
-    } 
+        var conn = new SqlConnection(ConnectionString);
+        conn.Open();
+        return conn;
+    }
 }
