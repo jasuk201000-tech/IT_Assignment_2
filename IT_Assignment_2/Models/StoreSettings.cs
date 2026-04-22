@@ -27,7 +27,7 @@ namespace IT_Assignment_2.Models
     public class DiscountCode
     {
         // discount information
-        public int DiscountId { get; set; }
+        public Guid DiscountId { get; set; }
         public string Code { get; set; } = string.Empty;
 
         // discount details

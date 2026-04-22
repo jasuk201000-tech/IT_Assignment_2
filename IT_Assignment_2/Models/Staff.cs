@@ -15,7 +15,7 @@ namespace IT_Assignment_2.Models
     public class Staff
     {
         // getting and setting all properties for staff
-       public int StaffId { get; set; } 
+       public Guid StaffId { get; set; } 
         public string FirstName { get; set;} = string.Empty;
         public string LastName { get; set;} = string.Empty;
 

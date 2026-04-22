@@ -6,7 +6,7 @@ namespace IT_Assignment_2.Models
 {
     public class Product
     {
-        public int ProductID { get; set; }
+        public Guid ProductID { get; set; }
         public string ProductName { get; set; } = string.Empty;
 
         public string ProductCategory { get; set; } = string.Empty;
@@ -30,8 +30,8 @@ namespace IT_Assignment_2.Models
 
     public class ProductVariant
     {
-        public int VariantId { get; set; }
-        public int ProductId { get; set; }
+        public Guid VariantId { get; set; }
+        public Guid ProductId { get; set; }
         public string Size { get; set; } = string.Empty;
         public string? Colour { get; set; }
         public string? Sku { get; set; }

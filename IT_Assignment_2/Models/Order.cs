@@ -21,8 +21,8 @@ namespace IT_Assignment_2.Models
     public class Order
     {
         //identifying factors
-        public int OrderId { get; set; }
-        public int StaffId { get; set; }
+        public Guid OrderId { get; set; }
+        public Guid StaffId { get; set; }
         public string? CustomerName { get; set; }    // optional — walk-ins have no name
 
         //status and payment details
@@ -51,9 +51,9 @@ namespace IT_Assignment_2.Models
     public class OrderItem
     {
         // identifying factors
-        public int OrderItemId { get; set; }
-        public int OrderId { get; set; }
-        public int VariantId { get; set; }
+        public Guid OrderItemId { get; set; }
+        public Guid OrderId { get; set; }
+        public Guid VariantId { get; set; }
         public string ProductName { get; set; } = string.Empty;
         public string Size { get; set; } = string.Empty;
         public string? Colour { get; set; }
