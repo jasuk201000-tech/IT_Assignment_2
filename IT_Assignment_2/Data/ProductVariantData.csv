@@ -1,0 +1,79 @@
+VariantId,ProductId,ProductName,Size,Colour,Sku,Price,StockQty,LowStockThreshold
+be668f96-2501-468b-a1b7-09c89007619f,eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,XS,Ivory,LAC-XS-IVO,189.0,6,3
+62f8e57a-6428-41d7-9f14-f6bc69953748,eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,S,Ivory,LAC-S-IVO,189.0,10,3
+6abcdbf0-713b-4ced-9091-3e1fdbe8c69c,eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,M,Ivory,LAC-M-IVO,189.0,10,3
+605ab5dc-9265-4f3c-8eb8-96030e77db3a,eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,L,Ivory,LAC-L-IVO,189.0,5,3
+f2082fc1-8281-4690-aa50-01b0c9d7b2e3,eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,XL,Ivory,LAC-XL-IVO,189.0,7,3
+5aafbb4c-2f92-4182-b074-21a162d8b995,0e9b4673-4d09-4b37-af15-55566f6683ff,Rosette Mini Skirt,XS,Blush,ROS-XS-BLU,95.0,7,3
+cee5a4da-58e0-46e3-b5d4-2f9bb6c7136f,0e9b4673-4d09-4b37-af15-55566f6683ff,Rosette Mini Skirt,S,Blush,ROS-S-BLU,95.0,1,3
+012fad84-b4ce-4f69-9dd1-4617a11beac9,0e9b4673-4d09-4b37-af15-55566f6683ff,Rosette Mini Skirt,M,Blush,ROS-M-BLU,95.0,3,3
+b292d628-f54a-4599-9ef7-9d2b38926726,0e9b4673-4d09-4b37-af15-55566f6683ff,Rosette Mini Skirt,L,Blush,ROS-L-BLU,95.0,3,3
+ee122844-a3b8-4147-8511-7e194f86675a,a0c03725-f12b-4788-a68a-2e9767fc4c1a,Pearl Knit Cardigan,One Size,Cream,PEA-ON-CRE,129.0,5,3
+e0317d9d-11a9-4393-a634-faaea6f4ac1d,5350d9ac-7c7a-4bf9-a9f1-74833c7530da,Satin Slip Dress,XS,Champagne,SAT-XS-CHA,145.0,9,3
+5697cfb8-4478-424e-8633-4161c9e8df87,5350d9ac-7c7a-4bf9-a9f1-74833c7530da,Satin Slip Dress,S,Champagne,SAT-S-CHA,145.0,8,3
+280c35b8-4a34-47b1-96dd-64ec62a40619,5350d9ac-7c7a-4bf9-a9f1-74833c7530da,Satin Slip Dress,M,Champagne,SAT-M-CHA,145.0,3,3
+dea17957-4566-47a1-9d2e-9a485abbd5ab,5350d9ac-7c7a-4bf9-a9f1-74833c7530da,Satin Slip Dress,L,Champagne,SAT-L-CHA,145.0,9,3
+eda66b27-c60e-4f5a-9ba3-87ad5edd587f,b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,XS,White,FLO-XS-WHI,79.0,0,3
+03ba746c-34f1-460d-9181-b9b75aa2b77b,b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,S,White,FLO-S-WHI,79.0,1,3
+46e18076-a40f-4e2d-821f-c3977492b866,b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,M,White,FLO-M-WHI,79.0,11,3
+67a276c7-a207-44f8-8cbe-d45c99f7b28b,b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,L,White,FLO-L-WHI,79.0,10,3
+8328d1ba-b6d9-45af-9a26-054b839ef59b,b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,XL,White,FLO-XL-WHI,79.0,0,3
+18df5127-2903-4609-a8a5-f065fcfc8f93,d0b3faee-c4be-4ee2-bd73-f416ae4383f6,Velvet Corset Top,XS,Black,VEL-XS-BLA,115.0,1,3
+a99cdcbc-1c09-41c2-b047-a3b6fa2b2443,d0b3faee-c4be-4ee2-bd73-f416ae4383f6,Velvet Corset Top,S,Black,VEL-S-BLA,115.0,0,3
+80ec045f-61ef-42fb-bf6c-9d28edfb57cb,d0b3faee-c4be-4ee2-bd73-f416ae4383f6,Velvet Corset Top,M,Black,VEL-M-BLA,115.0,5,3
+2b3b518c-bb73-4f93-adef-264476a8bdfd,d0b3faee-c4be-4ee2-bd73-f416ae4383f6,Velvet Corset Top,L,Black,VEL-L-BLA,115.0,1,3
+70e7a822-58aa-448e-9add-903a3cbce029,1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,XS,Ivory,BOW-XS-IVO,65.0,3,3
+2c3c1667-1f36-41fd-b1e4-ca55b85a7dd7,1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,S,Ivory,BOW-S-IVO,65.0,4,3
+7efaa08a-3238-45ac-b250-8fff74191aea,1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,M,Ivory,BOW-M-IVO,65.0,10,3
+47810bae-8e4b-43a5-b1e6-749c8d249271,1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,L,Ivory,BOW-L-IVO,65.0,7,3
+673d0bd2-3b4e-4e75-9330-97431e80b762,1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,XL,Ivory,BOW-XL-IVO,65.0,3,3
+01d2fe6a-5a8c-4609-8858-bcb8539346a2,25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,XS,Mauve,PLE-XS-MAU,89.0,2,3
+b51c5fd2-f01e-4c0e-9cd7-fe2e3d551860,25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,S,Mauve,PLE-S-MAU,89.0,11,3
+d7ebb16b-6835-4c42-8f41-b306f18a9a15,25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,M,Mauve,PLE-M-MAU,89.0,9,3
+d49ee45c-faf4-47c8-858b-285e9a1a3b3e,25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,L,Mauve,PLE-L-MAU,89.0,9,3
+c122ec99-4c1c-48c6-9a22-38ba24fec4bf,25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,XL,Mauve,PLE-XL-MAU,89.0,7,3
+aa1259f0-5d5b-4198-9904-a421e05dd2eb,c071fd51-aada-470b-a1e1-93528a24867f,Ruffle Wrap Dress,XS,Blush,RUF-XS-BLU,165.0,12,3
+809653b6-1370-4986-86ca-9f38fc4a9539,c071fd51-aada-470b-a1e1-93528a24867f,Ruffle Wrap Dress,S,Blush,RUF-S-BLU,165.0,7,3
+dcaa2748-d884-471f-af58-ceb708f23d6c,c071fd51-aada-470b-a1e1-93528a24867f,Ruffle Wrap Dress,M,Blush,RUF-M-BLU,165.0,12,3
+7bb6e0ca-e332-4444-996a-83c5486bafef,c071fd51-aada-470b-a1e1-93528a24867f,Ruffle Wrap Dress,L,Blush,RUF-L-BLU,165.0,6,3
+c09e6078-4b19-4b7b-89d3-b2f33f55388b,ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,XS,Cream,LIN-XS-CRE,109.0,1,3
+4f3f7463-1f04-4d7e-8415-18b15ebee5ab,ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,S,Cream,LIN-S-CRE,109.0,1,3
+8296d2c5-e176-4eac-bf90-632671bc19df,ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,M,Cream,LIN-M-CRE,109.0,10,3
+df86077e-41a5-40d7-ac12-969b002a364b,ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,L,Cream,LIN-L-CRE,109.0,6,3
+9e3f1a0a-245f-43df-a24e-66e93f188b3d,ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,XL,Cream,LIN-XL-CRE,109.0,5,3
+ceffbcb3-9b18-48d6-8e8e-23315f865ee0,12ec1348-0bcf-4e7c-b455-372172e8d1e5,Smocked Sundress,XS,Floral,SMO-XS-FLO,135.0,6,3
+9e61e5c4-24d5-4d07-9c1b-df42da583305,12ec1348-0bcf-4e7c-b455-372172e8d1e5,Smocked Sundress,S,Floral,SMO-S-FLO,135.0,7,3
+e90eed0f-2506-4423-9a86-a8c0136257fc,12ec1348-0bcf-4e7c-b455-372172e8d1e5,Smocked Sundress,M,Floral,SMO-M-FLO,135.0,11,3
+2205f3cb-f55e-4990-978a-015209a2441b,12ec1348-0bcf-4e7c-b455-372172e8d1e5,Smocked Sundress,L,Floral,SMO-L-FLO,135.0,0,3
+4d38a0d5-252a-421f-bc97-ccc675f16d91,8de37d6b-59e5-44ce-847d-235b211a3de5,Cropped Blazer,XS,Oatmeal,CRO-XS-OAT,195.0,10,3
+34ffbb3c-c291-4b27-8e5c-09fe1d4c3a39,8de37d6b-59e5-44ce-847d-235b211a3de5,Cropped Blazer,S,Oatmeal,CRO-S-OAT,195.0,10,3
+5b552f39-f15d-4f71-a4a6-13d6c7f09145,8de37d6b-59e5-44ce-847d-235b211a3de5,Cropped Blazer,M,Oatmeal,CRO-M-OAT,195.0,1,3
+c0df668b-0acc-449a-89c2-743d8297a236,8de37d6b-59e5-44ce-847d-235b211a3de5,Cropped Blazer,L,Oatmeal,CRO-L-OAT,195.0,0,3
+91698e38-f9f2-473a-8aac-9ed9ed031113,ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,XS,Black,HAL-XS-BLA,59.0,11,3
+f09823d2-75b4-4e94-a9c3-0bd330c726ce,ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,S,Black,HAL-S-BLA,59.0,5,3
+a6a4fc08-c741-4987-bcde-ee2fcf8a08b4,ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,M,Black,HAL-M-BLA,59.0,12,3
+10cb4f37-2baa-46a8-a186-5e1154566157,ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,L,Black,HAL-L-BLA,59.0,1,3
+9f12e554-f61c-4982-aa33-246aca429949,ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,XL,Black,HAL-XL-BLA,59.0,3,3
+737f95bf-b8cf-41ff-86ac-b2caa1722f04,aed4edbf-bffe-424f-9ce8-6a7758f82f84,Tiered Maxi Dress,XS,Sage,TIE-XS-SAG,175.0,3,3
+7f011bcf-4739-4dfa-87fa-d8e3af957910,aed4edbf-bffe-424f-9ce8-6a7758f82f84,Tiered Maxi Dress,S,Sage,TIE-S-SAG,175.0,8,3
+1d332bd0-35a2-40ab-b323-91d42c2f2b33,aed4edbf-bffe-424f-9ce8-6a7758f82f84,Tiered Maxi Dress,M,Sage,TIE-M-SAG,175.0,7,3
+e8925754-cd93-4af3-838f-f52fcb8dfa1b,aed4edbf-bffe-424f-9ce8-6a7758f82f84,Tiered Maxi Dress,L,Sage,TIE-L-SAG,175.0,2,3
+47bb6172-f3f3-47f4-b9a5-c9108e715eb3,3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,XS,Light Wash,DEN-XS-LIG,75.0,2,3
+e9a14ff5-4e2d-4aaf-96cd-21bc9b779937,3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,S,Light Wash,DEN-S-LIG,75.0,4,3
+b018e879-7058-465f-aa28-1835aa580b42,3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,M,Light Wash,DEN-M-LIG,75.0,7,3
+5cc23949-28da-4926-ba5b-48a8d280f9d6,3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,L,Light Wash,DEN-L-LIG,75.0,3,3
+66e6857c-2f0b-436f-a119-5e5880d6762c,3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,XL,Light Wash,DEN-XL-LIG,75.0,1,3
+69f006f5-a8fb-40c3-beb2-fd190ae6c07d,432d4323-1904-46a3-b936-5f7677366adf,Knit Vest Top,XS,Cream,KNI-XS-CRE,69.0,12,3
+ebe167b0-3c2f-470c-9ba0-c950edebaf77,432d4323-1904-46a3-b936-5f7677366adf,Knit Vest Top,S,Cream,KNI-S-CRE,69.0,8,3
+67c97a6b-a7bf-4c9e-8000-e385eaaf43c4,432d4323-1904-46a3-b936-5f7677366adf,Knit Vest Top,M,Cream,KNI-M-CRE,69.0,1,3
+417fa001-0f9a-41e6-9e86-01b35fc0e4e8,432d4323-1904-46a3-b936-5f7677366adf,Knit Vest Top,L,Cream,KNI-L-CRE,69.0,0,3
+9aa96002-a2bd-496b-b88c-812e65c6b895,3cedec46-6992-436e-829b-2202e9e1ffb1,Sheer Overlay Dress,XS,Dusty Rose,SHE-XS-DUS,155.0,8,3
+8e691f28-94d8-4658-85fc-53471122ebda,3cedec46-6992-436e-829b-2202e9e1ffb1,Sheer Overlay Dress,S,Dusty Rose,SHE-S-DUS,155.0,0,3
+186e35ae-3acb-492d-bfad-2fe113c1313d,3cedec46-6992-436e-829b-2202e9e1ffb1,Sheer Overlay Dress,M,Dusty Rose,SHE-M-DUS,155.0,1,3
+7d5f57ad-0ff2-4f4d-bb81-2233fd2453aa,3cedec46-6992-436e-829b-2202e9e1ffb1,Sheer Overlay Dress,L,Dusty Rose,SHE-L-DUS,155.0,12,3
+6001f966-231f-4686-b376-39a395b987ac,61b25aba-9c5b-45df-9006-66af78025417,Leather Belt Bag,One Size,Tan,LEA-ON-TAN,85.0,2,3
+2daba689-48aa-43cb-bc40-a901e2e6b524,3edd130f-0c6f-450e-978f-bdd38cc0a1ed,Silk Hair Scrunchie Set,One Size,Mixed,SIL-ON-MIX,25.0,7,3
+46020559-223c-47e5-9196-f407beb54b32,19fad51b-ac08-4e1a-b2bd-dc489eaa73ed,Lace Trim Cami Set,XS,Ivory,LAC-XS-IVO,125.0,3,3
+917884e7-8bcb-44b7-9356-4279a2dad738,19fad51b-ac08-4e1a-b2bd-dc489eaa73ed,Lace Trim Cami Set,S,Ivory,LAC-S-IVO,125.0,6,3
+4ad596f8-461c-4ec7-830a-a24786a3a9df,19fad51b-ac08-4e1a-b2bd-dc489eaa73ed,Lace Trim Cami Set,M,Ivory,LAC-M-IVO,125.0,0,3
+164b7672-4d3b-4d9f-83ce-55a026d411c5,19fad51b-ac08-4e1a-b2bd-dc489eaa73ed,Lace Trim Cami Set,L,Ivory,LAC-L-IVO,125.0,2,3

@@ -1,4 +1,4 @@
-StaffId,FirstName,LastName,Email,PasswordHash,PinHash,Role,IsActive,CreatedAt,LastLogin
+StaffId,FirstName,LastName,Email,PasswordHash,PINHash,Role,IsActive,CreatedAt,LastLogin
 06576767-0ade-417b-a2ba-f04459309031,Amelia,Chen,owner@amane.com,$2b$12$hash1,$2b$12$pin1,3,True,2023-01-01 09:00:00,2023-06-22 22:43:23
 0c354f1c-31e5-4915-bea3-ca2efa454d4c,Sarah,Mitchell,sarah@amane.com,$2b$12$hash2,$2b$12$pin2,2,True,2023-03-15 09:00:00,2023-04-03 10:14:03
 d0d03f3b-96f5-4e60-aa1c-0c95ecffcd62,James,Park,james@amane.com,$2b$12$hash3,$2b$12$pin3,2,True,2023-06-01 09:00:00,2024-12-27 23:30:11

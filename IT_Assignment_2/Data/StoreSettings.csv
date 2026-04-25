@@ -1,0 +1,13 @@
+SettingKey,SettingValue
+StoreName,Amane
+TaxRate,0.10
+ReturnPolicy,Full refund within 14 days with receipt. Exchange within 30 days.
+ReceiptShowLogo,true
+ReceiptShowAddress,true
+ReceiptShowPhone,true
+ReceiptShowSocials,true
+ReceiptShowPolicy,true
+StoreAddress,12 Blush Lane Sydney NSW 2000
+StorePhone,+61 2 9000 0000
+StoreEmail,hello@amane.com.au
+StoreHandle,@amane.boutique

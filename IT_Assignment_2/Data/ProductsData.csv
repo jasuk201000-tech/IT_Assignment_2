@@ -1,0 +1,21 @@
+ProductId,ProductName,ProductCategory,ProductDescription,ProductImageUrl,IsActive,CreatedAt,UpdatedAt
+eaa37464-4862-4c50-b333-c6ad15c55414,Lace Bow Midi Dress,Dresses,"""Delicate lace overlay with satin bow waist detail""",,True,2024-03-01 12:42:11,2024-03-01 12:42:11
+0e9b4673-4d09-4b37-af15-55566f6683ff,Rosette Mini Skirt,Skirts,"""Gathered rosette trim with full lining""",,True,2024-04-10 12:04:41,2024-04-10 12:04:41
+a0c03725-f12b-4788-a68a-2e9767fc4c1a,Pearl Knit Cardigan,Knitwear,"""Soft ribbed knit with pearl button detailing""",,True,2024-01-13 10:22:56,2024-01-13 10:22:56
+5350d9ac-7c7a-4bf9-a9f1-74833c7530da,Satin Slip Dress,Dresses,"""Bias-cut satin with adjustable thin straps""",,True,2024-01-05 02:01:36,2024-01-05 02:01:36
+b8a8da85-86cf-4193-9a3a-057990a80ffc,Floral Mesh Blouse,Tops,"""Sheer mesh fabric with floral embroidery detail""",,True,2024-02-12 18:17:14,2024-02-12 18:17:14
+d0b3faee-c4be-4ee2-bd73-f416ae4383f6,Velvet Corset Top,Tops,"""Structured velvet bodice with boning detail""",,True,2024-02-14 10:56:45,2024-02-14 10:56:45
+1c2e2dc1-822a-4cd5-9777-d5ff1cc55348,Bow Detail Cami,Tops,"""Silky cami with adjustable straps and bow detail""",,True,2024-04-09 20:08:28,2024-04-09 20:08:28
+25085817-0650-4afa-81c9-ff58e089149b,Pleated Midi Skirt,Skirts,"""Flowing pleated skirt with elasticated waist""",,True,2024-04-14 17:00:44,2024-04-14 17:00:44
+c071fd51-aada-470b-a1e1-93528a24867f,Ruffle Wrap Dress,Dresses,"""Wrap style with ruffle hem and tie waist""",,True,2024-02-17 04:26:57,2024-02-17 04:26:57
+ab460bf8-dd70-4481-841e-c6cf98391a68,Linen Wide Leg Trousers,Bottoms,"""Relaxed fit linen trousers with wide leg silhouette""",,True,2024-02-06 23:22:28,2024-02-06 23:22:28
+12ec1348-0bcf-4e7c-b455-372172e8d1e5,Smocked Sundress,Dresses,"""Elasticated smocked bodice with tiered skirt""",,True,2024-03-23 06:01:10,2024-03-23 06:01:10
+8de37d6b-59e5-44ce-847d-235b211a3de5,Cropped Blazer,Outerwear,"""Tailored cropped blazer with single button fastening""",,True,2024-05-10 18:06:22,2024-05-10 18:06:22
+ec484460-5920-4a4d-a67d-ddb5a2946920,Halter Neck Top,Tops,"""Sleek halter neck with open back detail""",,True,2024-03-19 04:21:04,2024-03-19 04:21:04
+aed4edbf-bffe-424f-9ce8-6a7758f82f84,Tiered Maxi Dress,Dresses,"""Three-tier maxi dress with adjustable straps""",,True,2024-02-07 04:52:28,2024-02-07 04:52:28
+3fab3a7b-6ff9-4f31-a4e0-71ba77de7021,Denim Mini Skirt,Skirts,"""High waist denim mini with raw hem finish""",,True,2024-03-22 22:06:39,2024-03-22 22:06:39
+432d4323-1904-46a3-b936-5f7677366adf,Knit Vest Top,Knitwear,"""Ribbed knit vest with V neckline""",,True,2024-03-27 01:08:20,2024-03-27 01:08:20
+3cedec46-6992-436e-829b-2202e9e1ffb1,Sheer Overlay Dress,Dresses,"""Inner slip dress with sheer overlay skirt""",,True,2024-05-06 15:12:55,2024-05-06 15:12:55
+61b25aba-9c5b-45df-9006-66af78025417,Leather Belt Bag,Accessories,"""Mini belt bag in faux leather with gold hardware""",,True,2024-02-15 21:36:29,2024-02-15 21:36:29
+3edd130f-0c6f-450e-978f-bdd38cc0a1ed,Silk Hair Scrunchie Set,Accessories,"""Set of three silk scrunchies in complementary tones""",,False,2024-03-19 22:01:36,2024-03-19 22:01:36
+19fad51b-ac08-4e1a-b2bd-dc489eaa73ed,Lace Trim Cami Set,Sets,"""Matching cami and shorts set with lace trim detail""",,False,2024-04-03 11:17:34,2024-04-03 11:17:34
