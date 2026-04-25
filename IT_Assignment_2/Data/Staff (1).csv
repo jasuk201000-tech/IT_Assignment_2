@@ -1,0 +1,21 @@
+StaffId,FirstName,LastName,Email,PasswordHash,PinHash,Role,IsActive,CreatedAt,LastLogin
+06576767-0ade-417b-a2ba-f04459309031,Amelia,Chen,owner@amane.com,$2b$12$hash1,$2b$12$pin1,3,True,2023-01-01 09:00:00,2023-06-22 22:43:23
+0c354f1c-31e5-4915-bea3-ca2efa454d4c,Sarah,Mitchell,sarah@amane.com,$2b$12$hash2,$2b$12$pin2,2,True,2023-03-15 09:00:00,2023-04-03 10:14:03
+d0d03f3b-96f5-4e60-aa1c-0c95ecffcd62,James,Park,james@amane.com,$2b$12$hash3,$2b$12$pin3,2,True,2023-06-01 09:00:00,2024-12-27 23:30:11
+38f33662-7813-4a58-9630-66f623686474,Chloe,Tanaka,chloe@amane.com,$2b$12$hash4,$2b$12$pin4,1,True,2023-08-10 09:00:00,2024-03-10 14:55:05
+523ddda0-3429-4ebe-873b-d4f7e966bf9f,Isabella,Williams,isabella@amane.com,$2b$12$hash5,$2b$12$pin5,1,True,2023-09-01 09:00:00,2024-03-09 05:06:54
+906432ef-ad7f-4fc0-ad3f-bc475a6623f6,Liam,Thompson,liam@amane.com,$2b$12$hash6,$2b$12$pin6,1,True,2023-10-15 09:00:00,2024-04-05 08:56:59
+f243a6b1-a123-4699-9f5e-06e56dfe3ea9,Mia,Davis,mia@amane.com,$2b$12$hash7,$2b$12$pin7,1,True,2023-11-01 09:00:00,2024-02-17 09:10:31
+2c22a496-7d82-4eba-8729-ccf796eac8d9,Noah,Wilson,noah@amane.com,$2b$12$hash8,$2b$12$pin8,1,True,2024-01-10 09:00:00,2024-03-29 14:38:54
+00dfba06-c688-481e-850c-d45f0918b073,Sophia,Anderson,sophia@amane.com,$2b$12$hash9,$2b$12$pin9,1,True,2024-02-01 09:00:00,2025-03-30 14:22:08
+fded4172-8117-4917-868b-1a6b0e9a6162,Ethan,Moore,ethan@amane.com,$2b$12$hash10,$2b$12$pin10,1,True,2024-02-15 09:00:00,2024-04-22 12:39:26
+a2b7c5e7-5b5c-46b9-8cb3-dda169638b45,Olivia,Taylor,olivia@amane.com,$2b$12$hash11,$2b$12$pin11,1,True,2024-03-01 09:00:00,2025-01-22 17:11:34
+1bb24c0a-b859-4a6c-aa27-45f3d727d9b0,Lucas,Jackson,lucas@amane.com,$2b$12$hash12,$2b$12$pin12,1,True,2024-03-15 09:00:00,2024-04-08 16:28:19
+e3b8f5c3-993c-409b-9b29-8345f8ec4882,Ava,White,ava@amane.com,$2b$12$hash13,$2b$12$pin13,1,True,2024-04-01 09:00:00,2024-04-12 13:43:48
+f4cfa07b-b42f-4210-8f36-19f6b06956d7,Mason,Harris,mason@amane.com,$2b$12$hash14,$2b$12$pin14,2,True,2024-04-15 09:00:00,2024-05-21 09:18:10
+dc67a670-cd86-42fb-8d2c-f8d8537ae607,Harper,Martin,harper@amane.com,$2b$12$hash15,$2b$12$pin15,1,True,2024-05-01 09:00:00,2024-07-24 21:51:13
+c8a663b1-4c84-4c2f-b4e2-8cf0b56d18aa,Oliver,Garcia,oliver@amane.com,$2b$12$hash16,$2b$12$pin16,1,True,2024-05-15 09:00:00,2024-08-13 08:33:24
+ecfc0574-5398-465d-82eb-613e2a77f97a,Ella,Martinez,ella@amane.com,$2b$12$hash17,$2b$12$pin17,1,True,2024-06-01 09:00:00,2024-12-14 06:15:09
+296d6526-1957-4566-85ad-59bd69076ba9,William,Robinson,william@amane.com,$2b$12$hash18,$2b$12$pin18,1,True,2024-07-01 09:00:00,2025-02-19 19:13:16
+aed61192-9610-44d2-91bd-8df4596eb17a,Charlotte,Clark,charlotte@amane.com,$2b$12$hash19,$2b$12$pin19,1,False,2024-08-01 09:00:00,
+f57a36ee-0c0c-4e3d-9dcb-94cc26d7a3de,Jack,Lewis,jack@amane.com,$2b$12$hash20,$2b$12$pin20,1,False,2024-09-01 09:00:00,

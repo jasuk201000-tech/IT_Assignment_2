@@ -16,6 +16,8 @@ namespace IT_Assignment_2.Models
         public string Email { get; set; } = string.Empty;
         public int LoyaltyPoints { get; set; } = 0;
 
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+
         public string CustomerName => $"{FirstName} {LastName}";
 
         public bool IsLoyalCustomer => LoyaltyPoints >= 100;

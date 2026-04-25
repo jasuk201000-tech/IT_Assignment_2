@@ -23,6 +23,8 @@ namespace IT_Assignment_2.Models
         //identifying factors
         public Guid OrderId { get; set; }
         public Guid StaffId { get; set; }
+
+        public Guid CustomerId { get; set; } = Guid.Empty;   // optional - walk-ins have no customer record
         public string? CustomerName { get; set; }    // optional — walk-ins have no name
 
         //status and payment details
@@ -36,7 +38,6 @@ namespace IT_Assignment_2.Models
         public decimal AmountTendered { get; set; }
         public decimal Change { get; set; }
 
-        
         public string? Notes { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
@@ -46,6 +47,7 @@ namespace IT_Assignment_2.Models
         //computed financial properties
         public decimal Subtotal => Items.Sum(i => i.LineTotal);
         public decimal Total => Subtotal - DiscountAmount + TaxAmount;
+
     }
 
     public class OrderItem
