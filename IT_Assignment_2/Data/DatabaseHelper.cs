@@ -1,24 +1,29 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Supabase;
+using System.Text.Json;
 
-namespace AmaneRetailPOS.Data;
+namespace IT_Assignment_2.Data;
 
 public static class DatabaseHelper
 {
-    // sql connection details
-    private const string Server = @"amaneposserversoutheast.database.windows.net";
-    private const string Database = "amaneposdb";
-    private const string User = "sqladmin";
-    private const string Password = "Tribune2020!";
-    
+    private static Supabase.Client? _client;
 
-    public static string ConnectionString =>
-        $"Server={Server};Database={Database};User ID={User};Password={Password};Encrypt=True;TrustServerCertificate=False;";
-
-    // connection method
-    public static SqlConnection GetConnection()
+    public static async Task<Supabase.Client> GetClient()
     {
-        var conn = new SqlConnection(ConnectionString);
-        conn.Open();
-        return conn;
+        if (_client != null) return _client;
+
+        string json = File.ReadAllText("appsettings.json");
+        using var doc = JsonDocument.Parse(json);
+        string url = doc.RootElement
+                            .GetProperty("Supabase")
+                            .GetProperty("Url")
+                            .GetString()!;
+        string anonKey = doc.RootElement
+                            .GetProperty("Supabase")
+                            .GetProperty("AnonKey")
+                            .GetString()!;
+
+        _client = new Supabase.Client(url, anonKey);
+        await _client.InitializeAsync();
+        return _client;
     }
 }
