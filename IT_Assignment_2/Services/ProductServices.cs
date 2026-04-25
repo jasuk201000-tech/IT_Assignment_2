@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 using IT_Assignment_2.Models;
 using IT_Assignment_2.Data;
 
 namespace IT_Assignment_2.Services
 {
-    public class ProductServices
+    public static class ProductServices
     {
         // implement GetAll, GetById, Search (string? category, string? name), and GetVariantsByProductId, get categories get low stock
 
@@ -39,7 +40,7 @@ namespace IT_Assignment_2.Services
         public static List<Product> GetCategories() =>
             CsvHelper.LoadProducts()
                 .GroupBy(p => p.ProductCategory)
-                .Select(g => g.First())
+                .Select(c => c.First())
                 .ToList();
 
         // get low stock products
@@ -81,7 +82,7 @@ namespace IT_Assignment_2.Services
             var productToRemove = products.FirstOrDefault(p => p.ProductId == productId);
             if (productToRemove != null)
             {
-                products.Remove(productToRemove);
+                productToRemove.IsActive = false;
                 CsvHelper.SaveProducts(products);
             }
             return products;
