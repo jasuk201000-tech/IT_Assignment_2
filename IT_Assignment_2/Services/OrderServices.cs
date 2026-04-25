@@ -9,7 +9,6 @@ namespace IT_Assignment_2.Services
 {
     public static class OrderServices
     {
-        // implement PlaceOrder, GetAll, GetById, GetbyStaff, GetByCustomer, and GetByDateRange
 
         // place order method
         public static List<Order> GetAll() =>
@@ -41,7 +40,25 @@ namespace IT_Assignment_2.Services
                 .Where(o => o.CreatedAt >= startDate && o.CreatedAt <= endDate)
                 .ToList();
 
+        // get todays orders method
 
+        public static List<Order> GetTodaysOrders() =>
+            CsvHelper.LoadOrders()
+                .Where(o => o.CreatedAt.Date == DateTime.Today)
+                .ToList();
+
+        // get todays revenue method
+
+        public static decimal GetTodaysRevenue() =>
+            CsvHelper.LoadOrders()
+                .Where(o => o.CreatedAt.Date == DateTime.Today && o.Status == OrderStatus.Completed)
+                .Sum(o => o.Total);
+
+        // validate discount code
+
+        public static bool ValidateDiscountCode(string code) =>
+            CsvHelper.LoadDiscountCodes()
+                .Any(d => d.Code.Equals(code.Trim(), StringComparison.OrdinalIgnoreCase) && d.IsActive);
 
     }
 }
