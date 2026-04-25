@@ -9,10 +9,10 @@ namespace IT_Assignment_2.Services
     {
         // get all staff members method
         public static List<Staff> GetAllStaff()
-        { 
+        {
             return CsvHelper.LoadStaff();
         }
-        
+
         // adding new staff member method
         public static void AddStaff(Staff newStaff)
         {
@@ -33,6 +33,26 @@ namespace IT_Assignment_2.Services
         {
             return CsvHelper.LoadStaff()
                 .FirstOrDefault(s => s.StaffId == staffId);
+        }
+
+        // authentication method for staff login
+        public static Staff? Authenticate(string email, string password)
+        {
+            var staffList = GetAllStaff();
+
+            if (staffList == null)
+            {
+                return null;
+            }
+            if (!staffList.Any(s => s.Email.Equals(email, StringComparison.OrdinalIgnoreCase)))
+            {
+                return staffList.FirstOrDefault(s => s.Email.Equals(email, StringComparison.OrdinalIgnoreCase)
+            && s.PasswordHash == password);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }
