@@ -57,9 +57,8 @@ namespace IT_Assignment_2.Services
 
         // validate discount code
 
-        public static bool ValidateDiscountCode(string code) =>
-            CsvHelper.LoadDiscountCodes()
-                .Any(d => d.Code.Equals(code.Trim(), StringComparison.OrdinalIgnoreCase) && d.IsActive);
+        public static DiscountCode? GetDiscountCode(string code) =>
+            CsvHelper.FindDiscountCode(code);
 
         public static bool PlaceOrder(Order order)
         {
