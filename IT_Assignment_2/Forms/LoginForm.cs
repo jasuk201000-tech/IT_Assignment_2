@@ -11,27 +11,27 @@ public class LoginForm : Form
 {
     // to fix make sure that the cashiers dont need an email to log in, just a username and password or pin
 
-    private Panel _navBar = null!;
-    private Panel _cardPanel = null!;
-    private Label _lblTitle = null!;
+    private Panel AnavBar = null!;
+    private Panel AcardPanel = null!;
+    private Label AlblTitle = null!;
 
     // password mode
-    private Panel _panelPassword = null!;
-    private Label _lblEmail = null!;
-    private TextBox _txtEmail = null!;
-    private Label _lblPassword = null!;
-    private TextBox _txtPassword = null!;
-    private Label _lblForgot = null!;
-    private Button _btnLogin = null!;
-    private Button _btnPinSwitch = null!;
+    private Panel ApanelPassword = null!;
+    private Label AlblEmail = null!;
+    private TextBox AtxtEmail = null!;
+    private Label AlblPassword = null!;
+    private TextBox AtxtPassword = null!;
+    private Label AlblForgot = null!;
+    private Button AbtnLogin = null!;
+    private Button AbtnPinSwitch     = null!;
 
     // pin mode
-    private Panel _panelPin = null!;
-    private Label _lblPinInstr = null!;
-    private Label _lblPinDisplay = null!;
-    private TableLayoutPanel _pinPad = null!;
-    private Button _btnPasswordSwitch = null!;
-    private string _pinBuffer = "";
+    private Panel ApanelPin = null!;
+    private Label AlblPinInstr = null!;
+    private Label AlblPinDisplay = null!;
+    private TableLayoutPanel ApinPad = null!;
+    private Button AbtnPasswordSwitch = null!;
+    private string ApinBuffer = "";
 
 
 
@@ -78,7 +78,7 @@ public class LoginForm : Form
 
     private void BuildNavBar()
     {
-        _navBar = new Panel
+        AnavBar = new Panel
         {
             Dock = DockStyle.Top,
             Height = AmaneStyling.NavHeight,
@@ -87,22 +87,22 @@ public class LoginForm : Form
         };
 
         var logo = AmaneStyling.BuildLogoControl();
-        _navBar.Controls.Add(logo);
-        Controls.Add(_navBar);
+        AnavBar.Controls.Add(logo);
+        Controls.Add(AnavBar);
     }
 
     // card container for login elements, centered in the form
 
     private void BuildCard()
     {
-        _cardPanel = new Panel
+        AcardPanel = new Panel
         {
             Size = new Size(400, 480),
             BackColor = AmaneStyling.CardBg,
             BorderStyle = BorderStyle.FixedSingle
         };
 
-        _lblTitle = new Label
+        AlblTitle = new Label
         {
             Text = "amane staff portal",
             Font = AmaneStyling.FontTitle,
@@ -111,16 +111,16 @@ public class LoginForm : Form
             Location = new Point(30, 24)
         };
 
-        _cardPanel.Controls.Add(_lblTitle);
-        Controls.Add(_cardPanel);
+        AcardPanel.Controls.Add(AlblTitle);
+        Controls.Add(AcardPanel);
         CentreCard();
     }
 
     private void CentreCard()
     {
-        _cardPanel.Location = new Point(
-            (ClientSize.Width - _cardPanel.Width) / 2,
-            (ClientSize.Height - _cardPanel.Height) / 2
+        AcardPanel.Location = new Point(
+            (ClientSize.Width - AcardPanel.Width) / 2,
+            (ClientSize.Height - AcardPanel.Height) / 2
         );
     }
 
@@ -128,13 +128,13 @@ public class LoginForm : Form
 
     private void BuildPasswordPanel()
     {
-        _panelPassword = new Panel
+        ApanelPassword = new Panel
         {
             Size = new Size(340, 360),
             Location = new Point(30, 70)
         };
 
-        _lblEmail = new Label
+        AlblEmail = new Label
         {
             Text = "please enter email/username",
             Font = AmaneStyling.FontLabel,
@@ -143,14 +143,14 @@ public class LoginForm : Form
             Location = new Point(0, 0)
         };
 
-        _txtEmail = new TextBox
+        AtxtEmail = new TextBox
         {
             Size = new Size(340, 30),
             Location = new Point(0, 20)
         };
-        AmaneStyling.StyleTextBox(_txtEmail);
+        AmaneStyling.StyleTextBox(AtxtEmail);
 
-        _lblPassword = new Label
+        AlblPassword = new Label
         {
             Text = "please enter password",
             Font = AmaneStyling.FontLabel,
@@ -159,15 +159,15 @@ public class LoginForm : Form
             Location = new Point(0, 65)
         };
 
-        _txtPassword = new TextBox
+        AtxtPassword = new TextBox
         {
             Size = new Size(340, 30),
             Location = new Point(0, 85),
             UseSystemPasswordChar = true
         };
-        AmaneStyling.StyleTextBox(_txtPassword);
+        AmaneStyling.StyleTextBox(AtxtPassword);
 
-        _lblForgot = new Label
+        AlblForgot = new Label
         {
             Text = "forgotten password?",
             Font = AmaneStyling.FontLabel,
@@ -177,46 +177,46 @@ public class LoginForm : Form
             Cursor = Cursors.Hand
         };
 
-        _btnLogin = new Button
+        AbtnLogin = new Button
         {
             Text = "log in",
             Size = new Size(340, AmaneStyling.ButtonHeight),
             Location = new Point(0, 160)
         };
-        AmaneStyling.StyleButton(_btnLogin);
-        _btnLogin.Click += BtnLogin_Click;
+        AmaneStyling.StyleButton(AbtnLogin);
+        AbtnLogin.Click += BtnLogin_Click;
 
-        _btnPinSwitch = new Button
+        AbtnPinSwitch = new Button
         {
             Text = "PIN Log in",
             Size = new Size(160, AmaneStyling.ButtonHeight),
-            Location = new Point(180, 160)
+            Location = new Point(240, 160)
         };
-        AmaneStyling.StyleButton(_btnPinSwitch, primary: false);
-        _btnPinSwitch.Click += (_, _) => ShowPinMode();
+        AmaneStyling.StyleButton(AbtnPinSwitch, primary: false);
+        AbtnPinSwitch.Click += (_, _) => ShowPinMode();
 
-        _panelPassword.Controls.AddRange(new Control[]
+        ApanelPassword.Controls.AddRange(new Control[]
         {
-            _lblEmail, _txtEmail,
-            _lblPassword, _txtPassword,
-            _lblForgot, _btnLogin, _btnPinSwitch
+            AlblEmail, AtxtEmail,
+            AlblPassword, AtxtPassword,
+            AlblForgot, AbtnLogin, AbtnPinSwitch
         });
 
-        _cardPanel.Controls.Add(_panelPassword);
+        AcardPanel.Controls.Add(ApanelPassword);
     }
 
     // PIN panel
 
     private void BuildPinPanel()
     {
-        _panelPin = new Panel
+        ApanelPin = new Panel
         {
             Size = new Size(340, 360),
             Location = new Point(30, 70),
             Visible = false
         };
 
-        _lblPinInstr = new Label
+        AlblPinInstr = new Label
         {
             Text = "enter your 4-digit PIN",
             Font = AmaneStyling.FontLabel,
@@ -225,7 +225,7 @@ public class LoginForm : Form
             Location = new Point(0, 0)
         };
 
-        _lblPinDisplay = new Label
+        AlblPinDisplay = new Label
         {
             Text = "",
             Font = new Font(AmaneStyling.FontBody.FontFamily, 20f),
@@ -234,7 +234,7 @@ public class LoginForm : Form
             Location = new Point(0, 30)
         };
 
-        _pinPad = new TableLayoutPanel
+        ApinPad = new TableLayoutPanel
         {
             Size = new Size(300, 210),
             Location = new Point(0, 70),
@@ -244,34 +244,32 @@ public class LoginForm : Form
 
         // set equal column and row sizes
         for (int i = 0; i < 3; i++)
-            _pinPad.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            ApinPad.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
         for (int i = 0; i < 4; i++)
-            _pinPad.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            ApinPad.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
 
         // digits 1-9
         for (int i = 1; i <= 9; i++)
-            _pinPad.Controls.Add(CreatePinButton(i.ToString()));
-
+            ApinPad.Controls.Add(CreatePinButton(i.ToString()));
         // bottom row — empty, 0, backspace
-        _pinPad.Controls.Add(new Label(), 0, 3);
-        _pinPad.Controls.Add(CreatePinButton("0"), 1, 3);
-        _pinPad.Controls.Add(CreatePinButton("⌫"), 2, 3);
-
-        _btnPasswordSwitch = new Button
+        ApinPad.Controls.Add(new Label(), 0, 3);
+        ApinPad.Controls.Add(CreatePinButton("0"), 1, 3);
+        ApinPad.Controls.Add(CreatePinButton("⌫"), 2, 3);
+        AbtnPasswordSwitch = new Button
         {
             Text = "use password instead",
             Size = new Size(300, AmaneStyling.ButtonHeight),
             Location = new Point(0, 295)
         };
-        AmaneStyling.StyleButton(_btnPasswordSwitch, primary: false);
-        _btnPasswordSwitch.Click += (_, _) => ShowPasswordMode();
+        AmaneStyling.StyleButton(AbtnPasswordSwitch, primary: false);
+        AbtnPasswordSwitch.Click += (_, _) => ShowPasswordMode();
 
-        _panelPin.Controls.AddRange(new Control[]
+        ApanelPin.Controls.AddRange(new Control[]
         {
-            _lblPinInstr, _lblPinDisplay, _pinPad, _btnPasswordSwitch
+            AlblPinInstr, AlblPinDisplay, ApinPad, AbtnPasswordSwitch, ApinPad,
         });
 
-        _cardPanel.Controls.Add(_panelPin);
+        AcardPanel.Controls.Add(ApanelPin);
     }
 
     private Button CreatePinButton(string text)
@@ -294,32 +292,32 @@ public class LoginForm : Form
 
     private void ShowPasswordMode()
     {
-        _panelPassword.Visible = true;
-        _panelPin.Visible = false;
-        _pinBuffer = "";
-        _lblPinDisplay.Text = "";
+        ApanelPassword.Visible = true;
+        ApanelPin.Visible = false;
+        ApinBuffer = "";
+        AlblPinDisplay.Text = "";
     }
 
     private void ShowPinMode()
     {
-        _panelPassword.Visible = false;
-        _panelPin.Visible = true;
+        ApanelPassword.Visible = false;
+        ApanelPin.Visible = true;
     }
 
     // authentication logic for password login
 
     private void BtnLogin_Click(object? sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(_txtEmail.Text) ||
-            string.IsNullOrWhiteSpace(_txtPassword.Text))
+        if (string.IsNullOrWhiteSpace(AtxtEmail.Text) ||
+            string.IsNullOrWhiteSpace(AtxtPassword.Text))
         {
             ShowError("Please enter your email and password.");
             return;
         }
 
         var staff = StaffService.AuthenticatePassword(
-            _txtEmail.Text.Trim(),
-            _txtPassword.Text);
+            AtxtEmail.Text.Trim(),
+            AtxtPassword.Text);
 
         if (staff == null)
         {
@@ -337,43 +335,43 @@ public class LoginForm : Form
     {
         if (key == "⌫")
         {
-            if (_pinBuffer.Length > 0)
-                _pinBuffer = _pinBuffer[..^1];
+            if (ApinBuffer.Length > 0)
+                ApinBuffer = ApinBuffer[..^1];
         }
         else
         {
-            if (_pinBuffer.Length >= 4) return;
-            _pinBuffer += key;
+            if (ApinBuffer.Length >= 4) return;
+            ApinBuffer += key;
         }
 
         // show dots for each digit entered
-        _lblPinDisplay.Text = new string('●', _pinBuffer.Length);
+        AlblPinDisplay.Text = new string('●', ApinBuffer.Length);
 
         // auto submit when 4 digits entered
-        if (_pinBuffer.Length == 4)
+        if (ApinBuffer.Length == 4)
             SubmitPin();
     }
 
     private void SubmitPin()
     {
         // PIN login requires email to identify the staff member
-        if (string.IsNullOrWhiteSpace(_txtEmail.Text))
+        if (string.IsNullOrWhiteSpace(AtxtEmail.Text))
         {
             ShowError("Please enter your email first.");
-            _pinBuffer = "";
-            _lblPinDisplay.Text = "";
+            ApinBuffer = "";
+            AlblPinDisplay.Text = "";
             return;
         }
 
         var staff = StaffService.AuthenticatePin(
-            _txtEmail.Text.Trim(),
-            _pinBuffer);
+            AtxtEmail.Text.Trim(),
+            ApinBuffer);
 
         if (staff == null)
         {
             ShowError("Incorrect PIN.");
-            _pinBuffer = "";
-            _lblPinDisplay.Text = "";
+            ApinBuffer = "";
+            AlblPinDisplay.Text = "";
             return;
         }
 
