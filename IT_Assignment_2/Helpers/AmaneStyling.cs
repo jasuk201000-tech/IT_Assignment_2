@@ -18,11 +18,13 @@ public static class AmaneStyling
     public static readonly Color TextDark = ColorTranslator.FromHtml("#463232");
     public static readonly Color TextMuted = ColorTranslator.FromHtml("#8C6E6E");
     public static readonly Color TextOnNav = ColorTranslator.FromHtml("#3C2828");
+    public static readonly Color TextOnURL = ColorTranslator.FromHtml("#FFFFFF");
 
-   // interactive components
+    // interactive components
     public static readonly Color InputBg = ColorTranslator.FromHtml("#FFFFFF");
     public static readonly Color InputBorder = ColorTranslator.FromHtml("#C8AAAA");
     public static readonly Color ButtonPrimary = ColorTranslator.FromHtml("#C69898");
+    public static readonly Color ButtonSecondary = ColorTranslator.FromHtml("#9E8585");
     public static readonly Color ButtonText = ColorTranslator.FromHtml("#FFFFFF");
     public static readonly Color CardBg = ColorTranslator.FromHtml("#FAF3F0");
 

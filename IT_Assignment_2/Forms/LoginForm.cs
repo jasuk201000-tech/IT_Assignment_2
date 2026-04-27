@@ -96,5 +96,137 @@ namespace IT_Assignment_2.Forms
             _cardPanel.Controls.Add(_lblTitle);
             Controls.Add(_cardPanel);
         }
+
+        public void BuildPasswordPanel()
+        {
+            _panelPassword = new Panel
+            {
+                Size = new Size(340, 300),
+                Location = new Point(30, 80)
+            };
+            _lblEmail = new Label
+            {
+                Text = "Email",
+                Font = AmaneStyling.FontBody,
+                ForeColor = AmaneStyling.TextDark,
+                AutoSize = true,
+                Location = new Point(0, 0)
+            };
+            _txtEmail = new TextBox
+            {
+                Size = new Size(300, 30),
+                Location = new Point(0, 30)
+            };
+            _lblPassword = new Label
+            {
+                Text = "Password",
+                Font = AmaneStyling.FontBody,
+                ForeColor = AmaneStyling.TextDark,
+                AutoSize = true,
+                Location = new Point(0, 80)
+            };
+            _txtPassword = new TextBox
+            {
+                Size = new Size(300, 30),
+                Location = new Point(0, 110),
+                UseSystemPasswordChar = true
+            };
+            _lblForgot = new Label
+            {
+                Text = "Forgot password?",
+                Font = AmaneStyling.FontBody,
+                ForeColor = AmaneStyling.TextOnURL,
+                AutoSize = true,
+                Location = new Point(0, 150),
+                Cursor = Cursors.Hand
+            };
+            _btnLogin = new Button
+            {
+                Text = "Login",
+                Size = new Size(300, 40),
+                Location = new Point(0, 190),
+                BackColor = AmaneStyling.ButtonPrimary,
+                ForeColor = AmaneStyling.ButtonText,
+                FlatStyle = FlatStyle.Flat
+            };
+            _btnLogin.FlatAppearance.BorderSize = 0;
+            // event handlers would be added here
+            _panelPassword.Controls.AddRange(new Control[]
+            {
+                _lblEmail, _txtEmail, _lblPassword, _txtPassword, _lblForgot, _btnLogin
+            });
+            _cardPanel.Controls.Add(_panelPassword);
+        }
+
+        public void BuildPinPanel()
+        {
+            _panelPin = new Panel
+            {
+                Size = new Size(340, 300),
+                Location = new Point(30, 80),
+                Visible = false
+            };
+            _lblPinInstr = new Label
+            {
+                Text = "Enter your 4-digit PIN",
+                Font = AmaneStyling.FontBody,
+                ForeColor = AmaneStyling.TextDark,
+                AutoSize = true,
+                Location = new Point(0, 0)
+            };
+            _lblPinDisplay = new Label
+            {
+                Text = "",
+                Font = new Font(AmaneStyling.FontBody.FontFamily, 18f, FontStyle.Bold),
+                ForeColor = AmaneStyling.TextDark,
+                AutoSize = true,
+                Location = new Point(0, 40)
+            };
+            _pinPad = new TableLayoutPanel
+            {
+                Size = new Size(300, 200),
+                Location = new Point(0, 80),
+                ColumnCount = 3,
+                RowCount = 4
+            };
+            for (int i = 1; i <= 9; i++)
+            {
+                var btn = CreatePinButton(i.ToString());
+                _pinPad.Controls.Add(btn);
+            }
+            var btnZero = CreatePinButton("0");
+            _pinPad.Controls.Add(btnZero, 1, 3);
+            _btnPasswordSwitch = new Button
+            {
+                Text = "Use Password",
+                Size = new Size(300, 40),
+                Location = new Point(0, 290),
+                BackColor = AmaneStyling.ButtonSecondary,
+                ForeColor = AmaneStyling.ButtonText,
+                FlatStyle = FlatStyle.Flat
+            };
+            _btnPasswordSwitch.FlatAppearance.BorderSize = 0;
+            // event handler would be added here
+            _panelPin.Controls.AddRange(new Control[]
+            {
+                _lblPinInstr, _lblPinDisplay, _pinPad, _btnPasswordSwitch
+            });
+            _cardPanel.Controls.Add(_panelPin);
+        }
+
+        private Button CreatePinButton(string text)
+        {
+            var btn = new Button
+            {
+                Text = text,
+                Dock = DockStyle.Fill,
+                BackColor = AmaneStyling.ButtonPrimary,
+                ForeColor = AmaneStyling.ButtonText,
+                FlatStyle = FlatStyle.Flat
+            };
+            btn.FlatAppearance.BorderSize = 0;
+            // event handler would be added here
+            return btn;
+        }
     }
 }
