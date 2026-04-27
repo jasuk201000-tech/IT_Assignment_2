@@ -9,7 +9,7 @@ namespace IT_Assignment_2.Forms;
 
 public class LoginForm : Form
 {
-    // control panels and elements
+    // to fix make sure that the cashiers dont need an email to log in, just a username and password or pin
 
     private Panel _navBar = null!;
     private Panel _cardPanel = null!;
@@ -190,7 +190,7 @@ public class LoginForm : Form
         {
             Text = "PIN Log in",
             Size = new Size(160, AmaneStyling.ButtonHeight),
-            Location = new Point(180, 215)
+            Location = new Point(180, 160)
         };
         AmaneStyling.StyleButton(_btnPinSwitch, primary: false);
         _btnPinSwitch.Click += (_, _) => ShowPinMode();
