@@ -19,6 +19,7 @@ public static class AmaneStyling
     public static readonly Color TextMuted = ColorTranslator.FromHtml("#8C6E6E");
     public static readonly Color TextOnNav = ColorTranslator.FromHtml("#3C2828");
     public static readonly Color TextOnURL = ColorTranslator.FromHtml("#FFFFFF");
+    public static readonly Color TextOnAccent = ColorTranslator.FromHtml("#827777");
 
     // interactive components
     public static readonly Color InputBg = ColorTranslator.FromHtml("#FFFFFF");
@@ -37,10 +38,34 @@ public static class AmaneStyling
     public const int NavHeight = 56;
     public const int ButtonHeight = 40;
 
+    public static readonly Font FontLabel = new Font("Segoe UI", 10f, FontStyle.Regular);
+    public static readonly Font FontTitle = new Font("Segoe UI", 14f, FontStyle.Bold);
     public static readonly Font FontBody = new Font("Segoe UI", 9f, FontStyle.Regular);
     public static readonly Font FontButton = new Font("Segoe UI", 10f, FontStyle.Regular);
 
-   // resource management for the logo image
+    // text box styling
+    public static void StyleTextBox(TextBox textBox)
+    {
+        textBox.BackColor = InputBg;
+        textBox.ForeColor = TextDark;
+        textBox.Font = FontBody;
+        textBox.BorderStyle = BorderStyle.FixedSingle;
+        textBox.Padding = new Padding(8);
+    }
+
+    // button styling
+    public static void StyleButton(Button button, bool primary = true)
+    {
+        button.BackColor = primary ? ButtonPrimary : ButtonSecondary;
+        button.ForeColor = ButtonText;
+        button.Font = FontButton;
+        button.FlatStyle = FlatStyle.Flat;
+        button.FlatAppearance.BorderSize = 0;
+        button.Size = new Size(100, ButtonHeight);
+        button.Cursor = Cursors.Hand;
+    }
+
+    // resource management for the logo image
     private const string LogoResourceName =
         "AmaneRetailPOS.Resources.Images.amane_logo.png";
 
