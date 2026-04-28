@@ -53,7 +53,7 @@ public static class StaffService
         return true;
     }
 
-    // ── Lookups ───────────────────────────────────────────────────────────────
+    //  look ups
 
     public static List<Staff> GetAll() =>
         CsvHelper.LoadStaff();
@@ -67,7 +67,7 @@ public static class StaffService
         CsvHelper.LoadStaff()
             .FirstOrDefault(s => s.StaffId == staffId);
 
-    // ── Authentication ────────────────────────────────────────────────────────
+    // authenticating staff members by email + password or email + PIN
 
     public static Staff? AuthenticatePassword(string email, string password)
     {
@@ -87,24 +87,18 @@ public static class StaffService
         return staff;
     }
 
-    public static Staff? AuthenticatePin(string email, string pin)
+    // changed to authenticate by PIN only, as per new requirements (PIN is a unique 4-digit code assigned to each staff member, used for quick login at the POS terminal)
+    public static Staff? AuthenticatePin(string pin, string apinBuffer)
     {
-        // find active staff member with a PIN set
         var staff = CsvHelper.LoadStaff()
             .FirstOrDefault(s =>
-                s.Email.Equals(email.Trim(),
-                    StringComparison.OrdinalIgnoreCase)
-                && s.IsActive
-                && s.PINHash != null);
-
-        if (staff == null) return null;
-
-        // plain comparison — PIN is stored as plain text
-        if (!VerifyPin(pin, staff.PINHash!))
-            return null;
+                s.IsActive
+                && s.PIN == pin);
 
         return staff;
     }
+
+
 
     // validation method to prevent duplicate emails during creation
 
@@ -112,6 +106,10 @@ public static class StaffService
         CsvHelper.LoadStaff()
             .Any(s => s.Email.Equals(email.Trim(),
                 StringComparison.OrdinalIgnoreCase));
+
+    public static bool IsPinTaken(string pin) =>
+    CsvHelper.LoadStaff()
+        .Any(s => s.PIN == pin && s.IsActive);
 
     // creating new staff members
 
@@ -121,6 +119,7 @@ public static class StaffService
         if (IsEmailTaken(staff.Email)) return false;
         if (!IsPasswordStrong(password)) return false;
         if (pin != null && !IsValidPin(pin)) return false;
+
 
         // generate ID and hash password
         staff.StaffId = Guid.NewGuid();
@@ -202,5 +201,10 @@ public static class StaffService
         byte[] bytes = Encoding.UTF8.GetBytes(pin);
         byte[] hash = sha.ComputeHash(bytes);
         return Convert.ToBase64String(hash);
+    }
+
+    internal static Staff AuthenticatePin(string apinBuffer)
+    {
+        throw new NotImplementedException();
     }
 }

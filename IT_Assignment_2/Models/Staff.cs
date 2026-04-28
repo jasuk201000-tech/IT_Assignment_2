@@ -27,6 +27,7 @@ namespace IT_Assignment_2.Models
         public bool IsActive { get; set; } = true;
         public bool IsAdmin => Role == UserRole.Admin;
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-        public DateTime? LastLogin { get; set; } 
+        public DateTime? LastLogin { get; set; }
+        public string PIN { get; internal set; }
     }
 }

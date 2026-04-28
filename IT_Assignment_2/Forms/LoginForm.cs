@@ -242,19 +242,19 @@ public class LoginForm : Form
             RowCount = 4
         };
 
-        // set equal column and row sizes
         for (int i = 0; i < 3; i++)
-            ApinPad.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            ApinPad.ColumnStyles.Add(
+                new ColumnStyle(SizeType.Percent, 33.33f));
         for (int i = 0; i < 4; i++)
-            ApinPad.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
+            ApinPad.RowStyles.Add(
+                new RowStyle(SizeType.Percent, 25f));
 
-        // digits 1-9
         for (int i = 1; i <= 9; i++)
             ApinPad.Controls.Add(CreatePinButton(i.ToString()));
-        // bottom row — empty, 0, backspace
         ApinPad.Controls.Add(new Label(), 0, 3);
         ApinPad.Controls.Add(CreatePinButton("0"), 1, 3);
         ApinPad.Controls.Add(CreatePinButton("⌫"), 2, 3);
+
         AbtnPasswordSwitch = new Button
         {
             Text = "use password instead",
@@ -266,7 +266,7 @@ public class LoginForm : Form
 
         ApanelPin.Controls.AddRange(new Control[]
         {
-            AlblPinInstr, AlblPinDisplay, ApinPad, AbtnPasswordSwitch, ApinPad,
+        AlblPinInstr, AlblPinDisplay, ApinPad, AbtnPasswordSwitch, ApinPad, ApinPad,
         });
 
         AcardPanel.Controls.Add(ApanelPin);
@@ -352,32 +352,6 @@ public class LoginForm : Form
             SubmitPin();
     }
 
-    private void SubmitPin()
-    {
-        // PIN login requires email to identify the staff member
-        if (string.IsNullOrWhiteSpace(AtxtEmail.Text))
-        {
-            ShowError("Please enter your email first.");
-            ApinBuffer = "";
-            AlblPinDisplay.Text = "";
-            return;
-        }
-
-        var staff = StaffService.AuthenticatePin(
-            AtxtEmail.Text.Trim(),
-            ApinBuffer);
-
-        if (staff == null)
-        {
-            ShowError("Incorrect PIN.");
-            ApinBuffer = "";
-            AlblPinDisplay.Text = "";
-            return;
-        }
-
-        SessionManager.Login(staff);
-        OpenShell();
-    }
 
     // utility method to show error messages in a consistent way
 
@@ -395,6 +369,22 @@ public class LoginForm : Form
         Hide();
     }
 
+    // submit PIN for authentication, similar to password login but using the PIN buffer instead
+    private void SubmitPin()
+    {
+        var staff = StaffService.AuthenticatePin(ApinBuffer);
+
+        if (staff == null)
+        {
+            ShowError("Incorrect PIN.");
+            ApinBuffer = "";
+            AlblPinDisplay.Text = "";
+            return;
+        }
+
+        SessionManager.Login(staff);
+        OpenShell();
+    }
     private void MainShellForm_FormClosed(object? sender, FormClosedEventArgs e)
     {
         // log out when shell is closed
