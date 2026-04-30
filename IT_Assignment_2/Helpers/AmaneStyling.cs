@@ -38,10 +38,13 @@ public static class AmaneStyling
     public const int NavHeight = 56;
     public const int ButtonHeight = 40;
 
-    public static readonly Font FontLabel = new Font("Segoe UI", 10f, FontStyle.Regular);
-    public static readonly Font FontTitle = new Font("Segoe UI", 14f, FontStyle.Bold);
-    public static readonly Font FontBody = new Font("Segoe UI", 9f, FontStyle.Regular);
-    public static readonly Font FontButton = new Font("Segoe UI", 10f, FontStyle.Regular);
+    public static readonly Font FontLabel = new("Cambria", 10f, FontStyle.Regular);
+    private static readonly Font FontTitleBold = new("Cambria", 14f, FontStyle.Bold);
+    public static readonly Font FontTitle = FontTitleBold;
+    public static readonly Font FontBody = new("Cambria    ", 9f, FontStyle.Regular);
+    public static readonly Font FontNav = new("Cambria", 10f, FontStyle.Bold);
+    private static readonly Font font = new("Cambria", 10f, FontStyle.Regular);
+    public static readonly Font FontButton = font;
 
     // text box styling
     public static void StyleTextBox(TextBox textBox)
@@ -50,7 +53,7 @@ public static class AmaneStyling
         textBox.ForeColor = TextDark;
         textBox.Font = FontBody;
         textBox.BorderStyle = BorderStyle.FixedSingle;
-        textBox.Padding = new Padding(8);
+        textBox.Padding = new(8);
     }
 
     // button styling
@@ -61,7 +64,7 @@ public static class AmaneStyling
         button.Font = FontButton;
         button.FlatStyle = FlatStyle.Flat;
         button.FlatAppearance.BorderSize = 0;
-        button.Size = new Size(100, ButtonHeight);
+        button.Size = new(100, ButtonHeight);
         button.Cursor = Cursors.Hand;
     }
 
@@ -106,8 +109,8 @@ public static class AmaneStyling
     {
         var container = new Panel
         {
-            Size = new Size(140, NavHeight),   
-            Location = new Point(16, 0),
+            Size = new(140, NavHeight),   
+            Location = new(16, 0),
             BackColor = Color.Transparent,
             Cursor = Cursors.Hand
         };
@@ -115,7 +118,7 @@ public static class AmaneStyling
         var label = new Label
         {
             Text = "a m a n e",
-            Font = new Font("Segoe UI", 13f, FontStyle.Regular),
+            Font = new("Cambria", 13f, FontStyle.Regular),
             ForeColor = TextOnNav,
             AutoSize = true,
             BackColor = Color.Transparent,
@@ -123,7 +126,7 @@ public static class AmaneStyling
         };
 
  
-        label.Location = new Point(0, (container.Height - label.PreferredHeight) / 2);
+        label.Location = new(0, (container.Height - label.PreferredHeight) / 2);
 
         container.Controls.Add(label);
 
@@ -138,8 +141,8 @@ public static class AmaneStyling
             return new PictureBox
             {
                 Image = LogoImage,
-                Size = new Size(140, NavHeight - 16),
-                Location = new Point(20, 8),
+                Size = new(140, NavHeight - 16),
+                Location = new(20, 8),
                 SizeMode = PictureBoxSizeMode.Zoom,
                 BackColor = Color.Transparent,
                 Cursor = Cursors.Hand
