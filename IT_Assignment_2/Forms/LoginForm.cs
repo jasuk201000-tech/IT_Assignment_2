@@ -23,7 +23,7 @@ public class LoginForm : Form
     private TextBox AtxtPassword = null!;
     private Label AlblForgot = null!;
     private Button AbtnLogin = null!;
-    private Button AbtnPinSwitch     = null!;
+    private Button AbtnPinSwitch = null!;
 
     // pin mode
     private Panel ApanelPin = null!;
@@ -31,6 +31,12 @@ public class LoginForm : Form
     private Label AlblPinDisplay = null!;
     private TableLayoutPanel ApinPad = null!;
     private Button AbtnPasswordSwitch = null!;
+    private Panel NavPanel;
+    private Button dashboardBtn;
+    private Button settingsBtn;
+    private Button transactionsBtn;
+    private Button orderBtn;
+    private Button inventoryBtn;
     private string ApinBuffer = "";
 
 
@@ -385,6 +391,96 @@ public class LoginForm : Form
         SessionManager.Login(staff);
         OpenShell();
     }
+
+    private void InitializeComponent()
+    {
+        NavPanel = new Panel();
+        dashboardBtn = new Button();
+        inventoryBtn = new Button();
+        orderBtn = new Button();
+        transactionsBtn = new Button();
+        settingsBtn = new Button();
+        NavPanel.SuspendLayout();
+        SuspendLayout();
+        // 
+        // NavPanel
+        // 
+        NavPanel.BackColor = Color.FromArgb(220, 180, 180);
+        NavPanel.Controls.Add(settingsBtn);
+        NavPanel.Controls.Add(transactionsBtn);
+        NavPanel.Controls.Add(orderBtn);
+        NavPanel.Controls.Add(inventoryBtn);
+        NavPanel.Controls.Add(dashboardBtn);
+        NavPanel.Location = new Point(0, 1);
+        NavPanel.Name = "NavPanel";
+        NavPanel.Size = new Size(951, 44);
+        NavPanel.TabIndex = 0;
+        // 
+        // dashboardBtn
+        // 
+        dashboardBtn.BackColor = Color.FromArgb(220, 180, 180);
+        dashboardBtn.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        dashboardBtn.Location = new Point(410, 11);
+        dashboardBtn.Name = "dashboardBtn";
+        dashboardBtn.Size = new Size(75, 23);
+        dashboardBtn.TabIndex = 0;
+        dashboardBtn.Text = "dashboard";
+        dashboardBtn.UseVisualStyleBackColor = false;
+        // 
+        // inventoryBtn
+        // 
+        inventoryBtn.BackColor = Color.FromArgb(220, 180, 180);
+        inventoryBtn.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        inventoryBtn.Location = new Point(511, 11);
+        inventoryBtn.Name = "inventoryBtn";
+        inventoryBtn.Size = new Size(75, 23);
+        inventoryBtn.TabIndex = 1;
+        inventoryBtn.Text = "inventory";
+        inventoryBtn.UseVisualStyleBackColor = false;
+        // 
+        // orderBtn
+        // 
+        orderBtn.BackColor = Color.FromArgb(220, 180, 180);
+        orderBtn.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        orderBtn.Location = new Point(609, 11);
+        orderBtn.Name = "orderBtn";
+        orderBtn.Size = new Size(75, 23);
+        orderBtn.TabIndex = 2;
+        orderBtn.Text = "orders";
+        orderBtn.UseVisualStyleBackColor = false;
+        // 
+        // transactionsBtn
+        // 
+        transactionsBtn.BackColor = Color.FromArgb(220, 180, 180);
+        transactionsBtn.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        transactionsBtn.Location = new Point(709, 11);
+        transactionsBtn.Name = "transactionsBtn";
+        transactionsBtn.Size = new Size(75, 23);
+        transactionsBtn.TabIndex = 3;
+        transactionsBtn.Text = "transactions";
+        transactionsBtn.UseVisualStyleBackColor = false;
+        // 
+        // settingsBtn
+        // 
+        settingsBtn.BackColor = Color.FromArgb(220, 180, 180);
+        settingsBtn.Font = new Font("Cambria", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        settingsBtn.Location = new Point(811, 11);
+        settingsBtn.Name = "settingsBtn";
+        settingsBtn.Size = new Size(75, 23);
+        settingsBtn.TabIndex = 4;
+        settingsBtn.Text = "settings";
+        settingsBtn.UseVisualStyleBackColor = false;
+        // 
+        // LoginForm
+        // 
+        ClientSize = new Size(950, 670);
+        Controls.Add(NavPanel);
+        Name = "LoginForm";
+        NavPanel.ResumeLayout(false);
+        ResumeLayout(false);
+
+    }
+
     private void MainShellForm_FormClosed(object? sender, FormClosedEventArgs e)
     {
         // log out when shell is closed
