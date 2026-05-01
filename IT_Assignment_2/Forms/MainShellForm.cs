@@ -81,6 +81,7 @@ namespace IT_Assignment_2.Forms
             orderBtn.TabIndex = 2;
             orderBtn.Text = "orders";
             orderBtn.UseVisualStyleBackColor = true;
+            orderBtn.Click += orderBtn_Click;
             // 
             // button2
             // 
@@ -134,5 +135,23 @@ namespace IT_Assignment_2.Forms
         }
 
         private Panel pnlContent;
+
+        private void ShowScreen(UserControl newScreen)
+        {
+            // Find existing controls and dispose them to free memory
+            foreach (Control ctrl in pnlContent.Controls)
+            {
+                ctrl.Dispose();
+            }
+
+            pnlContent.Controls.Clear(); 
+            newScreen.Dock = DockStyle.Fill; 
+            pnlContent.Controls.Add(newScreen); 
+        }
+
+        private void orderBtn_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new BuildOrderControl());
+        }
     }
 }
