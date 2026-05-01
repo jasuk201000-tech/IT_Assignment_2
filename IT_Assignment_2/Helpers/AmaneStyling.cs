@@ -45,6 +45,7 @@ public static class AmaneStyling
     public static readonly Font FontNav = new("Cambria", 10f, FontStyle.Bold);
     private static readonly Font font = new("Cambria", 10f, FontStyle.Regular);
     public static readonly Font FontButton = font;
+    public static readonly Font FontNavItem = new("Cambria", 10f, FontStyle.Regular);
 
     // text box styling
     public static void StyleTextBox(TextBox textBox)
