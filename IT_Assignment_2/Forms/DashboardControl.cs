@@ -78,11 +78,27 @@ namespace IT_Assignment_2.Forms
                 0);
             AddKpiValue(panel4, returns.ToString());
 
+             private void AddKpiValue(Panel tile, string value,
+            Color? colour = null)
+        {
+            var lbl = new Label
+            {
+                Text = value,
+                Font = new Font("Segoe UI", 20f, FontStyle.Regular),
+                ForeColor = colour ?? Color.FromArgb(70, 50, 50),
+                BackColor = Color.Transparent,
+                AutoSize = true,
+                // position below the existing title label
+                Location = new Point(10, 38)
+            };
+            tile.Controls.Add(lbl);
         }
+
 
         private void SetUpButtons()
         {
             // Implementation for setting up buttons
+
         }
 
         private void LoadLowStockAlerts()
