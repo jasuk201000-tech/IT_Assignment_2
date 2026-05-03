@@ -15,6 +15,8 @@ namespace IT_Assignment_2.Services
         public static List<Product> GetAll() =>
             CsvHelper.LoadProducts();
 
+        
+
         // get by id method
         public static Product? GetById(Guid productId) =>
             CsvHelper.LoadProducts()

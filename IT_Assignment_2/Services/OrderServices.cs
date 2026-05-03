@@ -48,6 +48,11 @@ namespace IT_Assignment_2.Services
                 .Where(o => o.CreatedAt.Date == DateTime.Today)
                 .ToList();
 
+        // get todays order count method
+        public static int GetTodaysOrderCount() =>
+            CsvHelper.LoadOrders()
+                .Count(o => o.CreatedAt.Date == DateTime.Today);
+
         // get todays revenue method
 
         public static decimal GetTodaysRevenue() =>

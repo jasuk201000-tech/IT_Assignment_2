@@ -57,14 +57,12 @@ namespace IT_Assignment_2.Forms
             int orders = SafeGet(() => OrderService.GetTodaysOrderCount(), 0);
             AddKpiValue(panel2, orders.ToString());
 
-            // customers panel
-            int customers = SafeGet(() => CustomerService.GetTodaysNewCustomerCount(), 0);
-            AddKpiValue(panel3, customers.ToString());
+           
 
             // low stock panel
             int lowStockItems = SafeGet(
                  int lowStock = SafeGet(
-                () => ProductService.GetLowStock()
+                () => ProductServices.GetLowStockProducts()
                           .SelectMany(p => p.Variants)
                           .Count(v => v.IsLowStock),
                   AddKpiValue(panel3, lowStock.ToString(),
@@ -112,7 +110,7 @@ namespace IT_Assignment_2.Forms
             lowstockalertPnl.Controls.Clear();
 
             List<Product> lowProducts = SafeGet(
-                () => ProductService.GetLowStock(),
+                () => ProductServices.GetLowStockProducts(),
                 new List<Product>());
 
             if (lowProducts.Count == 0)
@@ -136,8 +134,59 @@ namespace IT_Assignment_2.Forms
                         BuildLowStockRow(product.ProductName, variant));
                 }
             }
+             private Panel BuildLowStockRow(string productName, ProductVariant variant)
+        {
+            // colour the count — red if zero, amber if low
+            Color countColour = variant.StockQty == 0
+                ? Color.FromArgb(210, 100, 100)   // Danger red
+                : Color.FromArgb(220, 180, 100);  // Warning amber
+
+            var row = new Panel
+            {
+                Size = new Size(lowstockalertPnl.Width - 8, 32),
+                BackColor = Color.FromArgb(250, 243, 240), // CardBg
+                Margin = new Padding(4, 2, 4, 2)
+            };
+
+            // product name
+            row.Controls.Add(new Label
+            {
+                Text = productName,
+                Font = new Font("Segoe UI", 9f),
+                ForeColor = Color.FromArgb(70, 50, 50),
+                AutoSize = true,
+                Location = new Point(8, 8)
+            });
+
+            // size
+            row.Controls.Add(new Label
+            {
+                Text = $"Size {variant.Size}",
+                Font = new Font("Segoe UI", 9f),
+                ForeColor = Color.FromArgb(140, 110, 110),
+                AutoSize = true,
+                Location = new Point(200, 8)
+            });
+
+            // stock count
+            string countText = variant.StockQty == 0 ? "out of stock" : $"{variant.StockQty} left";
+            row.Controls.Add(new Label
+            {
+                Text = countText,
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
+                ForeColor = countColour,
+                AutoSize = true,
+                Location = new Point(320, 8)
+            });
+
+            return row;
         }
 
-
+        // safe Get method to handle potential exceptions from service calls, returning a fallback value if an error occurs
+        public static T SafeGet<T>(Func<T> fn, T fallback)
+        {
+            try { return fn(); }
+            catch { return fallback; }
+        }
     }
 }

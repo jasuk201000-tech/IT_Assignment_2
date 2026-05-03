@@ -127,12 +127,12 @@ public class MainShellForm : Form
 
         UserControl next = section switch
         {
-            "dashboard" => new dashboardcontrol(),
+            "dashboard" => new DashboardControl(),
             "inventory" => new InventoryControl(),
             "orders" => new BuildOrderControl(),
-            "reports" => new reportscontrol(),
-            "settings" => new settingscontrol(),
-            _ => new dashboardcontrol()
+            "reports" => new ReportsControl(),
+            "settings" => new SettingsControl(),
+            _ => new DashboardControl()
         };
 
         next.Dock = DockStyle.Fill;
