@@ -98,7 +98,12 @@ namespace IT_Assignment_2.Forms
         private void SetUpButtons()
         {
             // Implementation for setting up buttons
+            neworderBtn.Click += (_, _) => NavigationRequested?.Invoke("orders");
+            inventorymanageBtn.Click += (_, _) => NavigationRequested?.Invoke("inventory");
+            reportsviewBtn.Click += (_, _) => NavigationRequested?.Invoke("reports");
 
+            // hide reports button for cashiers
+            reportsviewBtn.Visible = SessionManager.IsManager;
         }
 
         private void LoadLowStockAlerts()
