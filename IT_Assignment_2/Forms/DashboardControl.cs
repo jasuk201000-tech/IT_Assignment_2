@@ -47,6 +47,37 @@ namespace IT_Assignment_2.Forms
         private void SetUpKPITiles()
         {
             // Implementation for setting up KPI tiles
+
+
+            // revenue panel
+            decimal revenue = SafeGet(() => OrderService.GetTodaysRevenue(), 0m);
+            AddKpiValue(panel1, $"${revenue:N2}");
+
+            // orders panel
+            int orders = SafeGet(() => OrderService.GetTodaysOrderCount(), 0);
+            AddKpiValue(panel2, orders.ToString());
+
+            // customers panel
+            int customers = SafeGet(() => CustomerService.GetTodaysNewCustomerCount(), 0);
+            AddKpiValue(panel3, customers.ToString());
+
+            // low stock panel
+            int lowStockItems = SafeGet(
+                 int lowStock = SafeGet(
+                () => ProductService.GetLowStock()
+                          .SelectMany(p => p.Variants)
+                          .Count(v => v.IsLowStock),
+                  AddKpiValue(panel3, lowStock.ToString(),
+                lowStock > 0 ? Color.FromArgb(220, 180, 100) // Warning amber
+                             : Color.FromArgb(130, 180, 140)); // Success green
+
+            // returns tile — count of refunded orders today
+            int returns = SafeGet(
+                () => OrderService.GetTodaysOrders()
+                          .Count(o => o.Status == OrderStatus.Refunded),
+                0);
+            AddKpiValue(panel4, returns.ToString());
+
         }
 
         private void SetUpButtons()
