@@ -1,4 +1,7 @@
-﻿using System;
+﻿using IT_Assignment_2.Helpers;
+using IT_Assignment_2.Models;
+using IT_Assignment_2.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,19 +13,35 @@ namespace IT_Assignment_2.Forms
 {
     public partial class DashboardControl : UserControl
     {
+        // Instance field to hold the current customer; set via the overloaded constructor.
+        private Customer _customer;
+
+        // Parameterless constructor kept for designer compatibility.
         public DashboardControl()
         {
             InitializeComponent();
-            UsernameGreeting();
+            // Do not call UsernameGreeting here because no Customer instance is available.
+            UsernameGreeting(); // This will set a generic greeting until the overloaded constructor is used.
             SetUpKPITiles();
             SetUpButtons();
             LoadLowStockAlerts();
+        }
 
+        // Overloaded constructor: callers should use this to provide the current customer.
+        public DashboardControl(Customer customer) : this()
+        {
+            _customer = customer;
+            UsernameGreeting();
         }
 
         private void UsernameGreeting()
         {
-            // Implementation for greeting the user
+            int hour = DateTime.Now.Hour;
+            string TimeOfDay = hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening";
+            string name = SessionManager.CurrentUser?.FirstName ?? "there";
+            label1.Text = $"Good {TimeOfDay}, {name}";
+
+            label2.Text = DateTime.Now.ToString("dddd, MMMM dd, yyyy");
         }
 
         private void SetUpKPITiles()
@@ -40,6 +59,5 @@ namespace IT_Assignment_2.Forms
             // Implementation for loading low stock alerts
         }
     }
-
     
 }
