@@ -109,7 +109,35 @@ namespace IT_Assignment_2.Forms
         private void LoadLowStockAlerts()
         {
             // Implementation for loading low stock alerts
+            lowstockalertPnl.Controls.Clear();
+
+            List<Product> lowProducts = SafeGet(
+                () => ProductService.GetLowStock(),
+                new List<Product>());
+
+            if (lowProducts.Count == 0)
+            {
+                // empty state — show a friendly message
+                lowstockalertPnl.Controls.Add(new Label
+                {
+                    Text = "all products are well stocked ✓",
+                    Font = new Font("Segoe UI", 9f),
+                    ForeColor = Color.FromArgb(130, 180, 140),
+                    AutoSize = true,
+                    Margin = new Padding(8)
+                });
+                return;
+            }
+            foreach (var product in lowProducts)
+            {
+                foreach (var variant in product.Variants.Where(v => v.IsLowStock))
+                {
+                    lowstockalertPnl.Controls.Add(
+                        BuildLowStockRow(product.ProductName, variant));
+                }
+            }
         }
+
+
     }
-    
 }
