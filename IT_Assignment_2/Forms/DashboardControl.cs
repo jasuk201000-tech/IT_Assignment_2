@@ -13,6 +13,33 @@ namespace IT_Assignment_2.Forms
         public DashboardControl()
         {
             InitializeComponent();
+            UsernameGreeting();
+            SetUpKPITiles();
+            SetUpButtons();
+            LoadLowStockAlerts();
+
+        }
+
+        private void UsernameGreeting()
+        {
+            // Implementation for greeting the user
+        }
+
+        private void SetUpKPITiles()
+        {
+            // Implementation for setting up KPI tiles
+        }
+
+        private void SetUpButtons()
+        {
+            // Implementation for setting up buttons
+        }
+
+        private void LoadLowStockAlerts()
+        {
+            // Implementation for loading low stock alerts
         }
     }
+
+    
 }
