@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace IT_Assignment_2.Forms
 {
-    public partial class Form1 : Form
+    public partial class MainShellForm  : Form
     {
-        public Form1()
+        public MainShellForm()
         {
             InitializeComponent();
         }

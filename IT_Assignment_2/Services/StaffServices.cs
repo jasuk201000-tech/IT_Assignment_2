@@ -203,8 +203,17 @@ public static class StaffService
         return Convert.ToBase64String(hash);
     }
 
-    internal static Staff AuthenticatePin(string apinBuffer)
+    internal static Staff? AuthenticatePin(string apinBuffer)
     {
-        throw new NotImplementedException();
+        // validate input
+        if (string.IsNullOrWhiteSpace(apinBuffer) || !IsValidPin(apinBuffer))
+            return null;
+
+        // hash entered PIN and look up active staff with matching PINHash
+        var hashed = Hashpin(apinBuffer);
+        var staff = CsvHelper.LoadStaff()
+            .FirstOrDefault(s => s.IsActive && s.PINHash != null && s.PINHash == hashed);
+
+        return staff;
     }
 }

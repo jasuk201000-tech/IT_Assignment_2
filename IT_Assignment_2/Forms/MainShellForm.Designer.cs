@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using IT_Assignment_2.Services;
 namespace IT_Assignment_2.Forms;
 
-public class MainShellForm : Form
+public partial class MainShellForm : Form
 {
     // main controls
     private Panel navBar = null!;
@@ -18,8 +18,8 @@ public class MainShellForm : Form
     private Button btnSettings = null!;
     private Label _lblUser = null!;
 
-    // constructing compononents
-    public MainShellForm()
+    // initializing components (moved from constructor to avoid duplicate constructor error)
+    private void InitializeComponents()
     {
         Text = "Amane POS";
         Size = new Size(1280, 800);

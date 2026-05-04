@@ -9,8 +9,6 @@ namespace IT_Assignment_2.Forms;
 
 public class LoginForm : Form
 {
-    // to fix make sure that the cashiers dont need an email to log in, just a username and password or pin
-
     private Panel AnavBar = null!;
     private Panel AcardPanel = null!;
     private Label AlblTitle = null!;
@@ -33,28 +31,7 @@ public class LoginForm : Form
     private Button AbtnPasswordSwitch = null!;
     private string ApinBuffer = "";
 
-
-
-    // constructor to set up the form and build UI
-    public class MainShellForm : Form
-    {
-        public MainShellForm()
-        {
-            Text = "Amane POS";
-            Size = new Size(1280, 800);
-            BackColor = AmaneStyling.PageBg;
-            StartPosition = FormStartPosition.CenterScreen;
-
-            var lbl = new Label
-            {
-                Text = "logged in — shell coming soon",
-                AutoSize = true,
-                Location = new Point(50, 50),
-                Font = AmaneStyling.FontTitle,
-            };
-            Controls.Add(lbl);
-        }
-    }
+    // constructor
     public LoginForm()
     {
         Text = "Amane — Staff Portal";
@@ -70,12 +47,10 @@ public class LoginForm : Form
         BuildPinPanel();
         ShowPasswordMode();
 
-
         Resize += (_, _) => CentreCard();
     }
 
-    // building navigation bar with logo
-
+    // navigation bar
     private void BuildNavBar()
     {
         AnavBar = new Panel
@@ -91,8 +66,7 @@ public class LoginForm : Form
         Controls.Add(AnavBar);
     }
 
-    // card container for login elements, centered in the form
-
+    // main card, where all the log in details are nested
     private void BuildCard()
     {
         AcardPanel = new Panel
@@ -105,7 +79,7 @@ public class LoginForm : Form
         AlblTitle = new Label
         {
             Text = "amane staff portal",
-            Font = AmaneStyling.FontTitle,
+            Font = AmaneStyling.FontTitle,   
             ForeColor = AmaneStyling.TextDark,
             AutoSize = true,
             Location = new Point(30, 24)
@@ -124,8 +98,7 @@ public class LoginForm : Form
         );
     }
 
-    // password panel with email and password fields, and switch to PIN mode
-
+    // ── Password panel ────────────────────────────────────────────────────────
     private void BuildPasswordPanel()
     {
         ApanelPassword = new Panel
@@ -190,7 +163,7 @@ public class LoginForm : Form
         {
             Text = "PIN Log in",
             Size = new Size(160, AmaneStyling.ButtonHeight),
-            Location = new Point(240, 160)
+            Location = new Point(240, 160)  // sits to the right of log in
         };
         AmaneStyling.StyleButton(AbtnPinSwitch, primary: false);
         AbtnPinSwitch.Click += (_, _) => ShowPinMode();
@@ -205,8 +178,7 @@ public class LoginForm : Form
         AcardPanel.Controls.Add(ApanelPassword);
     }
 
-    // PIN panel
-
+    // pin panel
     private void BuildPinPanel()
     {
         ApanelPin = new Panel
@@ -243,14 +215,13 @@ public class LoginForm : Form
         };
 
         for (int i = 0; i < 3; i++)
-            ApinPad.ColumnStyles.Add(
-                new ColumnStyle(SizeType.Percent, 33.33f));
+            ApinPad.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
         for (int i = 0; i < 4; i++)
-            ApinPad.RowStyles.Add(
-                new RowStyle(SizeType.Percent, 25f));
+            ApinPad.RowStyles.Add(new RowStyle(SizeType.Percent, 25f));
 
         for (int i = 1; i <= 9; i++)
             ApinPad.Controls.Add(CreatePinButton(i.ToString()));
+
         ApinPad.Controls.Add(new Label(), 0, 3);
         ApinPad.Controls.Add(CreatePinButton("0"), 1, 3);
         ApinPad.Controls.Add(CreatePinButton("⌫"), 2, 3);
@@ -264,9 +235,10 @@ public class LoginForm : Form
         AmaneStyling.StyleButton(AbtnPasswordSwitch, primary: false);
         AbtnPasswordSwitch.Click += (_, _) => ShowPasswordMode();
 
+        // FIX 2 — ApinPad was added three times, removed duplicates
         ApanelPin.Controls.AddRange(new Control[]
         {
-        AlblPinInstr, AlblPinDisplay, ApinPad, AbtnPasswordSwitch, ApinPad, ApinPad,
+            AlblPinInstr, AlblPinDisplay, ApinPad, AbtnPasswordSwitch
         });
 
         AcardPanel.Controls.Add(ApanelPin);
@@ -278,7 +250,7 @@ public class LoginForm : Form
         {
             Text = text,
             Dock = DockStyle.Fill,
-            BackColor = AmaneStyling.TextOnAccent,
+            BackColor = AmaneStyling.AccentLight,  
             ForeColor = AmaneStyling.TextDark,
             FlatStyle = FlatStyle.Flat,
             Margin = new Padding(2)
@@ -288,8 +260,7 @@ public class LoginForm : Form
         return btn;
     }
 
-    // mode switching logic
-
+    // mode switching
     private void ShowPasswordMode()
     {
         ApanelPassword.Visible = true;
@@ -304,8 +275,7 @@ public class LoginForm : Form
         ApanelPin.Visible = true;
     }
 
-    // authentication logic for password login
-
+    // password log in
     private void BtnLogin_Click(object? sender, EventArgs e)
     {
         if (string.IsNullOrWhiteSpace(AtxtEmail.Text) ||
@@ -329,8 +299,7 @@ public class LoginForm : Form
         OpenShell();
     }
 
-    // PIN logic
-
+    // pin login
     private void PinKeyPressed(string key)
     {
         if (key == "⌫")
@@ -344,32 +313,12 @@ public class LoginForm : Form
             ApinBuffer += key;
         }
 
-        // show dots for each digit entered
         AlblPinDisplay.Text = new string('●', ApinBuffer.Length);
 
-        // auto submit when 4 digits entered
         if (ApinBuffer.Length == 4)
             SubmitPin();
     }
 
-
-    // utility method to show error messages in a consistent way
-
-    private void ShowError(string message)
-    {
-        MessageBox.Show(message, "Amane",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Warning);
-    }
-
-    private void OpenShell()
-    {
-        var shell = new MainShellForm();
-        shell.Show();
-        Hide();
-    }
-
-    // submit PIN for authentication, similar to password login but using the PIN buffer instead
     private void SubmitPin()
     {
         var staff = StaffService.AuthenticatePin(ApinBuffer);
@@ -386,28 +335,23 @@ public class LoginForm : Form
         OpenShell();
     }
 
-    private void InitializeComponent()
+    // error messages
+    private void ShowError(string message)
     {
-        SuspendLayout();
-        // 
-        // LoginForm
-        // 
-        ClientSize = new Size(1323, 670);
-        Name = "LoginForm";
-        ResumeLayout(false);
-
+        MessageBox.Show(message, "Amane",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Warning);
     }
 
-    private void MainShellForm_FormClosed(object? sender, FormClosedEventArgs e)
+    private void OpenShell()
     {
-        // log out when shell is closed
-        SessionManager.Logout();
-        Show();
-    }
-
-    private void NavPanel_Paint(object sender, PaintEventArgs e)
-    {
-
+        var shell = new MainShellForm();
+        shell.FormClosed += (_, _) =>
+        {
+            SessionManager.Logout();
+            Show();
+        };
+        shell.Show();
+        Hide();
     }
 }
-

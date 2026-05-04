@@ -28,6 +28,7 @@ public static class AmaneStyling
     public static readonly Color ButtonSecondary = ColorTranslator.FromHtml("#9E8585");
     public static readonly Color ButtonText = ColorTranslator.FromHtml("#FFFFFF");
     public static readonly Color CardBg = ColorTranslator.FromHtml("#FAF3F0");
+    public static readonly Color AccentLight = ColorTranslator.FromHtml("#F3CFC6");
 
     // status indicators
     public static readonly Color Success = ColorTranslator.FromHtml("#82B48C");
