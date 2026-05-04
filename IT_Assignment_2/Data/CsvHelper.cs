@@ -69,9 +69,40 @@ public static class CsvHelper
     private static void RewriteFile(string fileName, string header, IEnumerable<string> rows)
     {
         string path = FilePath(fileName);
-        var lines = new List<string> { header };
-        lines.AddRange(rows);
-        File.WriteAllLines(path, lines);
+
+        try
+        {
+            // make sure the folder exists before writing
+            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+
+            var lines = new List<string> { header };
+            lines.AddRange(rows);
+            File.WriteAllLines(path, lines);
+        }
+        catch (UnauthorizedAccessException)
+        {
+            MessageBox.Show(
+                $"Access denied writing to {fileName}.\nCheck the file is not open in another program.",
+                "Amane — File Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
+        catch (DirectoryNotFoundException)
+        {
+            MessageBox.Show(
+                $"Data folder not found.\nMake sure the CSV files are set to Copy Always in Solution Explorer.",
+                "Amane — File Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(
+                $"Could not save {fileName}.\n{ex.Message}",
+                "Amane — File Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+        }
     }
 
     // null helpers
@@ -282,9 +313,9 @@ public static class CsvHelper
         SaveProductVariants(variants);
     }
 
-   
+
     ///  order csv format:
-    
+
 
     public static List<Order> LoadOrders()
     {
@@ -292,51 +323,31 @@ public static class CsvHelper
 
         foreach (var col in ReadRows("Orders.csv"))
         {
-            // building order
-            var order = new Order
+            list.Add(new Order
             {
                 OrderId = Guid.Parse(col[0]),
                 StaffId = Guid.Parse(col[1]),
-                CustomerId = !string.IsNullOrEmpty(col[2]) ? Guid.Parse(col[2]) : Guid.Empty,
+                CustomerId = (Guid)NullableGuid(col[2]),
                 Status = (OrderStatus)int.Parse(col[3]),
                 PaymentMethod = (PaymentMethod)int.Parse(col[4]),
                 DiscountAmount = decimal.Parse(col[5]),
                 DiscountCode = NullableString(col[6]),
                 TaxAmount = decimal.Parse(col[7]),
-                
+                // col[8] is Total — skip it, Total is computed from Items
                 AmountTendered = decimal.Parse(col[9]),
                 Change = decimal.Parse(col[10]),
                 Notes = NullableString(col[11]),
                 CreatedAt = DateTime.Parse(col[12])
-            };
-
-            
-            if (decimal.TryParse(col[8], out decimal parsedTotal))
-            {
-                var prop = typeof(Order).GetProperty("Total", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
-                var setMethod = prop?.GetSetMethod(true);
-                if (setMethod != null)
-                {
-                    
-                    setMethod.Invoke(order, new object[] { parsedTotal });
-                }
-                
-            }
-
-            list.Add(order);
+            });
         }
 
-        // attach order items to their parent order
         var items = LoadOrderItems();
         foreach (var order in list)
-        {
-            order.Items = items
-                .Where(i => i.OrderId == order.OrderId)
-                .ToList();
-        }
+            order.Items = items.Where(i => i.OrderId == order.OrderId).ToList();
 
         return list;
     }
+
 
     public static void SaveOrder(Order order)
     {

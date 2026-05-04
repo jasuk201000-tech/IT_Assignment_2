@@ -1,19 +1,18 @@
+using IT_Assignment_2;
 using IT_Assignment_2.Forms;
+using IT_Assignment_2.Services;
 
-namespace IT_Assignment_2
+static class Program
 {
-    internal static class Program
+    [STAThread]
+    static void Main()
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
-        }
+        ApplicationConfiguration.Initialize();
+
+        // creates a real owner account with properly hashed password
+        // only runs if owner@amane.com doesn't already exist
+        StaffService.SeedTestOwner();
+
+        Application.Run(new LoginForm());
     }
 }

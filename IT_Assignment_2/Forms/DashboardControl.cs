@@ -95,6 +95,7 @@ namespace IT_Assignment_2.Forms
         // quick navigation buttons
         private void SetUpButtons()
         {
+            
             neworderBtn.Click += (_, _) => NavigationRequested?.Invoke("orders");
             inventorymanageBtn.Click += (_, _) => NavigationRequested?.Invoke("inventory");
             reportsviewBtn.Click += (_, _) => NavigationRequested?.Invoke("reports");
