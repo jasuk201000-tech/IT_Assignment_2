@@ -159,5 +159,31 @@ namespace IT_Assignment_2.Forms
         {
             ShowScreen(new BuildOrderControl());
         }
+
+        private void dashboardBtn_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new DashboardControl());
+        }
+
+        private void inventoryBtn_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new InventoryControl());
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new SettingsControl());
+        }
+
+        private void reportsBtn_Click(object sender, EventArgs e)
+        { 
+            ShowScreen(new ReportsControl());
+        }
+
+        private void logoBtn_Click(object sender, EventArgs e)
+        {
+            ShowScreen(new DashboardControl());
+        }
+        
     }
 }

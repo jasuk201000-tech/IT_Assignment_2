@@ -98,7 +98,7 @@ public class LoginForm : Form
         );
     }
 
-    // ── Password panel ────────────────────────────────────────────────────────
+    // password panel definition
     private void BuildPasswordPanel()
     {
         ApanelPassword = new Panel
